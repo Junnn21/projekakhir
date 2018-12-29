@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BlueCademy</title>
+	<link rel="stylesheet" href="themes/BlueCademyTheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="javascripts/login.js"></script>
+</head>
+<body>
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-position="inline">
+			<h1>BlueCademy Login</h1>
+		</div>
+		
+		<div data-role="content" data-theme="a">
+			<form id="formLogin" data-ajax="false">
+                <input type="email" name="Email" id="inputEmail" placeholder="Email" required>
+                <input type="password" name="Password" id="inputPassword" placeholder="Password" required>
+                <input type="submit" value="Sign In" data-theme:"a" id="loginButton">
+                <a href="/auth/facebook" data-role="button" data-ajax="false">Sign in with Facebook</a>
+				<center><a href="/Register" data-ajax="false">Sign Up</a></center>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
