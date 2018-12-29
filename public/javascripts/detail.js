@@ -1,18 +1,18 @@
 function logout(){
     sessionStorage.removeItem('userId');
-    window.location.replace('/');
+    window.location.replace('https://tugasmccakhir.herokuapp.com/');
 }
 
 function home(){
-    window.location.replace('/home');
+    window.location.replace('https://tugasmccakhir.herokuapp.com/home');
 }
 
 function mycourse(){
-    window.location.replace('/mycourse');
+    window.location.replace('https://tugasmccakhir.herokuapp.com/mycourse');
 }
 
 function getCourse(courseId) {
-    let URL = "/detail_course";
+    let URL = "https://tugasmccakhir.herokuapp.com/detail_course";
     let userId = sessionStorage.getItem('userId');
 
     let option = {
@@ -31,7 +31,7 @@ function getCourse(courseId) {
         $('#description').text(r.course.Description);   
 
         let add = `<a onClick="save()" data-role="button" id="add">Add Course</a>`;
-        let URL = '/searchCourse';
+        let URL = 'https://tugasmccakhir.herokuapp.com/searchCourse';
 
         let option = {
             url: URL,
@@ -58,7 +58,7 @@ function save() {
     let courseId = search.get('courseId');
     let userId = sessionStorage.getItem('userId');
     
-    let url = '/assign_course'
+    let url = 'https://tugasmccakhir.herokuapp.com/assign_course'
     let option = {
         url: url,
         type: "POST",

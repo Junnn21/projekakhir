@@ -26,9 +26,9 @@ passport.deserializeUser(function(user, next){
   return next(null, user);
 });
 
-router.get('/auth/facebook', passport.authenticate('facebook', {scope: ['public_profile', 'email']}));
+router.get('https://tugasmccakhir.herokuapp.com/auth/facebook', passport.authenticate('facebook', {scope: ['public_profile', 'email']}));
 
-router.get('/auth/facebook/done', passport.authenticate('facebook', { failureRedirect: '/' })
+router.get('https://tugasmccakhir.herokuapp.com/auth/facebook/done', passport.authenticate('facebook', { failureRedirect: '/' })
   , function (req, res) {
     let displayName = req.user.displayName;
     let facebookId = req.user.id;
@@ -54,10 +54,10 @@ router.get('/auth/facebook/done', passport.authenticate('facebook', { failureRed
 
       let id = results;
       if(id.length === 0){
-        return res.redirect('/register?userData=' + userData) ;
+        return res.redirect('https://tugasmccakhir.herokuapp.com/register?userData=' + userData) ;
       }
       else{
-        return res.redirect('/home?userData=' + userData);
+        return res.redirect('https://tugasmccakhir.herokuapp.com/home?userData=' + userData);
       }
     })
 });
@@ -113,27 +113,27 @@ connection.connect(function(err, res){
 })
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('https://tugasmccakhir.herokuapp.com/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/register', function(req, res, next){
+router.get('https://tugasmccakhir.herokuapp.com/register', function(req, res, next){
   res.render('register');
 });
 
-router.get('/home', function(req, res, next){
+router.get('https://tugasmccakhir.herokuapp.com/home', function(req, res, next){
   res.render('home');
 });
 
-router.get('/mycourse', function(req, res, next){
+router.get('https://tugasmccakhir.herokuapp.com/mycourse', function(req, res, next){
   res.render('mycourse');
 })
 
-router.get('/detail', function(req, res, next){
+router.get('https://tugasmccakhir.herokuapp.com/detail', function(req, res, next){
   res.render('detail');
 })
 
-router.get('/courses', function(req, res){
+router.get('https://tugasmccakhir.herokuapp.com/courses', function(req, res){
   let query = `SELECT id, Main_course, Course_name, Description FROM courses`
 
   connection.query(query, function(err, results){
@@ -149,7 +149,7 @@ router.get('/courses', function(req, res){
   });
 });
 
-router.post('/detail_course', function(req, res){
+router.post('https://tugasmccakhir.herokuapp.com/detail_course', function(req, res){
   let courseId = req.body.courseId;
 
   let query = 'SELECT * FROM courses WHERE id = ?';
@@ -170,7 +170,7 @@ router.post('/detail_course', function(req, res){
   });
 })
 
-router.post('/assign_course', function(req, res){
+router.post('https://tugasmccakhir.herokuapp.com/assign_course', function(req, res){
   let userId = req.body.userId;
   let courseId = req.body.courseId;
 
@@ -205,7 +205,7 @@ router.post('/assign_course', function(req, res){
   });
 });
 
-router.post('/searchCourse', function(req, res){
+router.post('https://tugasmccakhir.herokuapp.com/searchCourse', function(req, res){
   let courseId = req.body.courseId;
   let userId = req.body.userId;
 
@@ -234,7 +234,7 @@ router.post('/searchCourse', function(req, res){
   });
 });
 
-router.post('/user_courses', function(req, res){
+router.post('https://tugasmccakhir.herokuapp.com/user_courses', function(req, res){
   let userId = req.body.userId;
 
   let query = `SELECT id, Main_course, Course_name, Description FROM courses WHERE id IN (SELECT course_id FROM user_courses WHERE user_id = ?)`;
@@ -252,7 +252,7 @@ router.post('/user_courses', function(req, res){
   });
 });
 
-router.post('/doRegister', function (req, res) {
+router.post('https://tugasmccakhir.herokuapp.com/doRegister', function (req, res) {
   let nama = req.body.nama;
   let password = req.body.password;
   let email = req.body.email;
@@ -290,7 +290,7 @@ router.post('/doRegister', function (req, res) {
   });
 });
 
-router.post('/doRegisterFb', function (req, res) {
+router.post('https://tugasmccakhir.herokuapp.com/doRegisterFb', function (req, res) {
   let id = req.body.id;
   let nama = req.body.nama;
   let password = req.body.password;
@@ -329,7 +329,7 @@ router.post('/doRegisterFb', function (req, res) {
   });
 });
 
-router.post('/doLogin', function(req, res){
+router.post('https://tugasmccakhir.herokuapp.com/doLogin', function(req, res){
   let email = req.body.email;
   let password = req.body.password;
 
