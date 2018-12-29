@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var mySql = require('mySql');
+var mysql = require('mysql');
 
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -69,7 +69,7 @@ let mySqlOpt={
   password: 'THEtru3peac3'
 };
 
-let connection = mySql.createConnection(mySqlOpt);
+let connection = mysql.createConnection(mySqlOpt);
 
 connection.connect(function(err, res){
   if(err){
