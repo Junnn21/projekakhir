@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   clientID: '223497058430020',
   clientSecret: '62b6da624931c86d35ca3870ad33c860',
   enableProof: true,
-  callbackURL: 'https://2546b92c.ngrok.io/auth/facebook/done',
+  callbackURL: 'https://tugasmccakhir.herokuapp.com/auth/facebook/done',
   profileFields: ['id', 'displayName', 'emails']
 }, function(accessToken, refreshToken, profile, next){
   return next(null, profile);
