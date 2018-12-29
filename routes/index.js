@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   clientID: '223497058430020',
   clientSecret: '62b6da624931c86d35ca3870ad33c860',
   enableProof: true,
-  callbackURL: 'https://tugasmccakhir.herokuapp.com/auth/facebook/done',
+  callbackURL: 'https://2546b92c.ngrok.io/auth/facebook/done',
   profileFields: ['id', 'displayName', 'emails']
 }, function(accessToken, refreshToken, profile, next){
   return next(null, profile);
@@ -295,7 +295,7 @@ router.post('/doRegisterFb', function (req, res) {
   let nama = req.body.nama;
   let password = req.body.password;
   let email = req.body.email;
-  let phonenumber = req.body.phone;
+  let phonenumber = req.body.phonenumber;
   
   let query = `INSERT INTO user(id, nama, password, email, phonenumber) VALUES(?, ?, ?, ?, ?)` 
 
