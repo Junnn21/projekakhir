@@ -8,7 +8,7 @@ function login(e){
     let password = $("#inputPassword").val();
 
     let option = {
-        url: 'https://tugasmccakhir.herokuapp.com/doLogin',
+        url: '/doLogin',
         type: 'POST',
         data: {
             email: email,
@@ -22,7 +22,7 @@ function login(e){
         if(r.status === "SUCCESS"){
             let data = JSON.stringify(r.user.id);
             sessionStorage.setItem('userId', data);
-            window.location.href = 'https://tugasmccakhir.herokuapp.com/home';
+            window.location.href = '/home';
         } else{
             alert(r.message);
         }

@@ -30,7 +30,7 @@ function register(e){
         let phone = $("#phoneNumber").val();
 
         let option = {
-            url: 'https://tugasmccakhir.herokuapp.com/doRegisterFb',
+            url: '/doRegisterFb',
             type: 'POST',
             data: {
                 id: facebookId,
@@ -46,7 +46,7 @@ function register(e){
             if (r.status === "SUCCESS") { 
                 let data = JSON.stringify(r.user.id);
                 sessionStorage.setItem('userId', data);
-                window.location.href = 'https://tugasmccakhir.herokuapp.com/home';
+                window.location.href = '/home';
             } else {
                 alert(r.message);
             }
@@ -58,7 +58,7 @@ function register(e){
         let phone = $("#phoneNumber").val();
 
         let option = {
-            url: 'https://tugasmccakhir.herokuapp.com/doRegister',
+            url: '/doRegister',
             type: 'POST',
                 data: {
                     nama: nama, 
@@ -74,7 +74,7 @@ function register(e){
                 id++;
                 let data = JSON.stringify(r.user.id);
                 sessionStorage.setItem('userId', data);
-                window.location.href = 'https://tugasmccakhir.herokuapp.com/home';
+                window.location.href = '/home';
             }   else {
                 alert(r.message);
             }

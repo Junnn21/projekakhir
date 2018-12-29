@@ -1,10 +1,10 @@
 function logout(){
     sessionStorage.removeItem('userId');
-    window.location.href = "https://tugasmccakhir.herokuapp.com/";
+    window.location.href = "/";
 }
 
 function home(){
-    window.location.href = "https://tugasmccakhir.herokuapp.com/home";
+    window.location.href = "/home";
 }
 
 function list(data){
@@ -13,7 +13,7 @@ function list(data){
         let MainCourse = `<h1>${temp.Main_course}<h1>`;
         let CourseName = `${temp.Course_name}`;
         let Description = `<p>${temp.Description}</p>`;
-        let View = `<a data-ajax="false" data-role="button" href="https://tugasmccakhir.herokuapp.com/detail?courseId=${temp.id}">View Detail</a>`;
+        let View = `<a data-ajax="false" data-role="button" href="/detail?courseId=${temp.id}">View Detail</a>`;
 
         let item = `<li data-role="list-divider">${MainCourse}</li><li><div>${CourseName}${Description}${View}</div></li>`;
 
@@ -25,7 +25,7 @@ function list(data){
 }
 
 jQuery(document).ready(function($){
-    let URL = "https://tugasmccakhir.herokuapp.com/user_courses";
+    let URL = "/user_courses";
     let userId = sessionStorage.getItem('userId');
 
     let option = {
