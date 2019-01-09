@@ -70,7 +70,6 @@ function register(e){
         let request = $.ajax(option);
         request.done(function (r) {
             if (r.status === "SUCCESS") { 
-                id++;
                 let data = JSON.stringify(r.user.id);
                 sessionStorage.setItem('userId', data);
                 window.location.href = '/home';
