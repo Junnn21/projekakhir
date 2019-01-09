@@ -12,10 +12,10 @@ function list(data){
         let temp = data[i];
         let MainCourse = `<h1>${temp.Main_course}<h1>`;
         let CourseName = `${temp.Course_name}`;
+        let link = `<center><iframe width="420" height="315" id=popupVideo src="${temp.link}"></iframe></center>`
         let Description = `<p>${temp.Description}</p>`;
-        let View = `<a data-ajax="false" data-role="button" href="/detail?courseId=${temp.id}">View Detail</a>`;
 
-        let item = `<li data-role="list-divider">${MainCourse}</li><li><div>${CourseName}${Description}${View}</div></li>`;
+        let item = `<li data-role="list-divider">${MainCourse}</li><li><div>${CourseName}${link}${Description}</div></li>`;
 
         $('#myCourse').append(item);
     }

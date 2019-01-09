@@ -237,7 +237,7 @@ router.post('/searchCourse', function(req, res){
 router.post('/user_courses', function(req, res){
   let userId = req.body.userId;
 
-  let query = `SELECT id, Main_course, Course_name, Description FROM courses WHERE id IN (SELECT course_id FROM user_courses WHERE user_id = ?)`;
+  let query = `SELECT id, Main_course, Course_name, link, Description FROM courses WHERE id IN (SELECT course_id FROM user_courses WHERE user_id = ?)`;
 
   connection.query(query, [userId], function(err, results){
     if(err){
