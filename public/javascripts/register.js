@@ -1,4 +1,3 @@
-var id = 1;
 jQuery(document).ready(function($){
     let para = window.location.search;
     let search = new URLSearchParams(para);

@@ -265,7 +265,7 @@ router.post('/doRegister', function (req, res) {
         console.error(err); //kasih tau ke console ada error saat query
         return res.json({
             status: "ERROR",
-            message: "Email already Registered!"
+            message: "Email already registered!"
         });
     }
 
@@ -301,10 +301,10 @@ router.post('/doRegisterFb', function (req, res) {
 
   connection.query(query, [id, nama, password, email, phonenumber], function (err){
     if (err) {
-        console.error(err); //kasih tau ke console ada error saat query
+        console.error(err);
         return res.json({
             status: "ERROR",
-            message: "Email already Registered!"
+            message: "Email already registered!"
         });
     }
 
