@@ -24,7 +24,7 @@
                 <input type="hidden" name="facebookID" id="facebookID">
 				<input type="text" name="Name" id="Name" placeholder="Name" required minlength="4">
                 <input type="email" name="Email" id="Email" placeholder="Email" required>
-				<input type="password" name="Password" id="Password" placeholder="Password" required pattern=""[a-zA-Z0-9].{6,}" oninput="document.getElementById('confirmPassword').pattern=this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')" title="Must consist of numeric and aplhabetic character, and at least 6 or more characters">
+				<input type="password" name="Password" id="Password" placeholder="Password" required pattern="([A-z0-9\s]){6,}" oninput="document.getElementById('confirmPassword').pattern=this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')" title="Must consist of numeric and aplhabetic character, and at least 6 or more characters">
 				<input type="password" name="confirmPassword" id="confirmPassword" pattern="" title="Password must match" placeholder="Confirm Password" required>
 				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" pattern="[0-9]{8,16}" title="Numeric at least 8 characters maximum 16 characters" required>
                 <input type="submit" value="Sign Up" data-theme:"a" id="registerButton">
